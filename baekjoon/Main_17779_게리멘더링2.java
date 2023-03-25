@@ -15,7 +15,6 @@ public class Main_17779_게리멘더링2 {
         n = Integer.parseInt(br.readLine());
 
         map = new int[n + 1][n + 1];
-        visit = new boolean[n + 1][n + 1];
         for (int i = 1; i <=n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 1; j <=n; j++) {
@@ -39,6 +38,7 @@ public class Main_17779_게리멘더링2 {
     }
 
     private static void division(int x, int y, int d1, int d2) {
+        visit = new boolean[n + 1][n + 1];
         //5구역
         for (int i = 0; i <= d1; i++) {
             visit[x + i][y - i] = true;
@@ -79,11 +79,13 @@ public class Main_17779_게리멘더링2 {
                 sum[3] += map[i][j];
             }
         }
-        for (int i = 0; i <4; i++) {
-            all -= sum[i];
-        }
         sum[4] = all;
+        for (int i = 0; i <4; i++) {
+            sum[4] -= sum[i];
+        }
+
         Arrays.sort(sum);
+
         answer = Math.min(answer,sum[4]-sum[0]);
     }
 }
