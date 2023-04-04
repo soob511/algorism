@@ -46,6 +46,7 @@ public class Main_19238_스타트택시 {
                 return o1[0] - o2[0];
             }
         });
+        
         visit = new boolean[m];
         int size = m;
         while (size-- > 0) {
