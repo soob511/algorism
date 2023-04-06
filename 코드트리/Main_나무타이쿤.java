@@ -81,10 +81,4 @@ public class Main_나무타이쿤 {
         }
         System.out.println(sum);
     }
-
-
 }
-
-
-
-
